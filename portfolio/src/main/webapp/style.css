@@ -7,3 +7,26 @@
 #greeting-container {
   margin-top: 20px;
 }
+
+a:visited {
+    color: white;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+body {
+    background-image: url("/images/blue.jpg");
+    background-attachment: scroll;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
