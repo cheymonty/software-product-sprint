@@ -19,14 +19,29 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.List;
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
+    private List<String> shows;
+
+  @Override
+  public void init() {
+    shows = new ArrayList<>();
+    shows.add("Degrassi");
+    shows.add("Big Mouth");
+    shows.add("Atypical");
+    shows.add("Law and Order: SVU");
+    shows.add("Good Girls");
+    shows.add("South Park");
+  }
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    response.setContentType("text/html;");
-    response.getWriter().println("<h1>Hello Cheyenne!</h1>");
+    String show = shows.get((int) (Math.random() * shows.size()));
+    response.setContentType("text/html");
+    response.getWriter().println("<h1>A show I enjoy watching: " + show + "</h1>");
   }
 }
