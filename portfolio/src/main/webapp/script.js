@@ -34,11 +34,11 @@ function fetchRandomGreeting() {
 
 function handlePromise() {
     const textPromise = response.text();
-    textPromise.then(addShowToDom);
+    textPromise.then(addCommentsToDom);
 }
 
-function addShowToDom(show) {
-    const showContainer = document.getElementById('show-container');
-    showContainer.innerText = show;
+function addCommentsToDom(comment) {
+    const commentContainer = document.getElementById('comment-container');
+    commentContainer.innerText = comment;
 }
 

@@ -21,27 +21,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays; 
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
-    private List<String> shows;
+    private List<String> comments;
 
   @Override
   public void init() {
-    shows = new ArrayList<>();
-    shows.add("Degrassi");
-    shows.add("Big Mouth");
-    shows.add("Atypical");
-    shows.add("Law and Order: SVU");
-    shows.add("Good Girls");
-    shows.add("South Park");
+    comments = new ArrayList<>();
+    comments.add("I really like your website");
+    comments.add("What's your favorite color?");
+    comments.add("Hi Cheyenne!");
+    comments.add("Do you take suggestions?");
   }
 
   @Override
-  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    String show = shows.get((int) (Math.random() * shows.size()));
+  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {    
     response.setContentType("text/html");
-    response.getWriter().println("<h1>A show I enjoy watching: " + show + "</h1>");
+    for (String comment: comments) {
+        response.getWriter().println("<p>" + comment + "</p>");
+    }
   }
 }
