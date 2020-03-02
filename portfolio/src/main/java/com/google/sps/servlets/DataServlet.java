@@ -19,29 +19,41 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays; 
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
-@WebServlet("/data")
+@WebServlet("/comments")
 public class DataServlet extends HttpServlet {
     private List<String> comments;
-
   @Override
   public void init() {
     comments = new ArrayList<>();
-    comments.add("I really like your website");
-    comments.add("What's your favorite color?");
-    comments.add("Hi Cheyenne!");
-    comments.add("Do you take suggestions?");
+  }
+
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+      String comment = request.getParameter("text-input");
+      String username = request.getParameter("username");
+
+      String both = username + " says: " + comment;
+      comments.add(both);
+      
+      
+      response.setContentType("text/html;");
+    
+      response.sendRedirect("/index.html");
   }
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {    
     response.setContentType("text/html");
+    response.getWriter().println("<h1>Comments Posted to Cheyenne's Portfolio</h1>");
     for (String comment: comments) {
         response.getWriter().println("<p>" + comment + "</p>");
     }
+    
   }
 }
