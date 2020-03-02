@@ -20,6 +20,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
+import com.google.appengine.api.datastore.DatastoreService;
+import com.google.appengine.api.datastore.DatastoreServiceFactory;
+import com.google.appengine.api.datastore.Entity;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays; 
@@ -40,7 +43,14 @@ public class DataServlet extends HttpServlet {
 
       String both = username + " says: " + comment;
       comments.add(both);
-      
+
+
+      Entity commentEntity = new Entity("comments");
+      commentEntity.setProperty("username", username);
+      commentEntity.setProperty("comment", comment);
+
+       DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+       datastore.put(commentEntity);
       
       response.setContentType("text/html;");
     
