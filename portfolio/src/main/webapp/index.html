@@ -23,14 +23,36 @@
         <li>Watching the Infographics Show on YouTube</li>
       </ul>
 
-      <p>Projects I have worked on</p>
+      <p>Projects I have worked on:</p>
       <ul>
-          <li>My <a href="https://cheymonty.github.io/">portfolio</a>, check it out!</li>
+          <li>My <a href="https://cheymonty.github.io">portfolio</a>, check it out!</li>
           <li>A simple terminal <a href="https://chey-monty.trinket.io/sites/hangman">hangman game</a> written in Python</li>
       </ul>
-      <p>Click the button to see one of my favorite TV shows:</p>
-      <button onclick="addRandomGreeting()">See a show</button>
-      <div id="greeting-container"></div>
     </div>
+        <br/>
+        <br/>
+        <br/>
+    <div style = "text-align:center">
+        <h1 style="text-align:center">Enter a comment below, click <a href="/comments" target="_blank">here</a> to see all of them!</h1>
+        
+       <form action="/comments" method="POST">
+            <label for="username">Enter a username:</label><br/>
+            <input type="text" id="username" name="username"><br/>
+
+            <br/>
+            <label for="message">Type your message</label><br/>
+            <textarea name="text-input"></textarea>
+            <br/><br/>
+
+            <input type="submit"/>
+       </form>
+
+
+      <!-- <p>Click the button to see one of my favorite TV shows:</p> -->
+      <!-- <p>Click for one of my favorite TV shows:</p>
+      <button onclick="addRandomGreeting()">See a show</button>
+      <div id="greeting-container"></div> -->
+      <div id="comment-container"></div>
+   </div>
   </body>
 </html>
