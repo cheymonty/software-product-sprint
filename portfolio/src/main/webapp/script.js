@@ -15,6 +15,13 @@
 /**
  * Adds a random greeting to the page.
  */
+
+function createMap() {
+    const map = new google.maps.Map(
+        document.getElementById('map'),
+        {center: {lat:38.989697, lng:-76.937759}, zoom: 16});
+}
+
 function addRandomGreeting() {
   const greetings =
       ['Law and Order: SVU', 'Degrassi', 'Big Mouth', 'Good Girls', 'South Park', 'Atypical'];

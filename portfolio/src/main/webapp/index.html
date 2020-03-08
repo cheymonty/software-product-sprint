@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <title>Cheyenne's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD72mN7GsCMHi5aALbLb_35gaqpbg5tZy0"></script>
     <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body onload = "createMap();">
     <div id="content">
       <h1>Cheyenne's Portfolio</h1>
       <p>Hi! My name is Cheyenne and I am a sophomore at the University of 
           Maryland, College Park. I am studying Computer Science and love coming up 
           with new projects!
       </p>
+    </div>
+    <div id="map"></div>
+    <div id="content">
+      
       <img src = "/images/avatar.png" alt = "Me">
 
       <p>Some of my hobbies:</p>
@@ -25,10 +30,13 @@
 
       <p>Projects I have worked on:</p>
       <ul>
-          <li>My <a href="https://cheymonty.github.io">portfolio</a>, check it out!</li>
-          <li>A simple terminal <a href="https://chey-monty.trinket.io/sites/hangman">hangman game</a> written in Python</li>
+          <li>My <a href="https://cheymonty.github.io" target="_blank">portfolio</a>, check it out!</li>
+          <li>A simple terminal <a href="https://chey-monty.trinket.io/sites/hangman" target="_blank">hangman game</a> written in Python</li>
       </ul>
     </div>
+
+
+    
         <br/>
         <br/>
         <br/>
