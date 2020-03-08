@@ -17,9 +17,12 @@
  */
 
 function createMap() {
+    var fillmore = {lat: 38.9974, lng: -77.0276};
     const map = new google.maps.Map(
         document.getElementById('map'),
-        {center: {lat:38.989697, lng:-76.937759}, zoom: 16});
+        {center: fillmore, zoom: 16});
+    
+    const marker = new google.maps.Marker({position: fillmore, map: map, title: 'First Rico Nasty concert!'});
 }
 
 function addRandomGreeting() {
