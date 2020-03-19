@@ -15,6 +15,26 @@
 /**
  * Adds a random greeting to the page.
  */
+
+function createMap() {
+    var fillmore = {lat: 38.9974, lng: -77.0276};
+    const map = new google.maps.Map(
+        document.getElementById('map'),
+        {center: fillmore, zoom: 16});
+    
+     var contentString = '<div style= "color: black">'+
+      '<h1 style="color:black">The Fillmore</h1>'+
+      '<p>The first Rico Nasty concert I went to was here!</p>'+
+      '</div>';
+    var infowindow = new google.maps.InfoWindow({
+    content: contentString
+     });
+    const marker = new google.maps.Marker({position: fillmore, map: map, title: 'First Rico Nasty concert!'});
+    marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
+}
+
 function addRandomGreeting() {
   const greetings =
       ['Law and Order: SVU', 'Degrassi', 'Big Mouth', 'Good Girls', 'South Park', 'Atypical'];

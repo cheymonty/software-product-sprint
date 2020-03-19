@@ -30,3 +30,12 @@ body {
     color: white;
     font-family: 'Roboto', sans-serif;
 }
+
+#map {
+  border: thin solid black;
+  height: 250px;
+  width: 400px;
+  float: right;
+  margin-right: 20px;
+  
+}
